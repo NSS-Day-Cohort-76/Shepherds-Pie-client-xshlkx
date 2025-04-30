@@ -1,0 +1,72 @@
+{
+  "employees": [
+    { "id": 1, "name": "Joe Shepherd", "role": "Manager" },
+    { "id": 2, "name": "Luca", "role": "Driver" },
+    { "id": 3, "name": "Maria", "role": "Server" }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "employeeId": 3,
+      "deliveryEmployeeId": 2,
+      "orderType": "delivery",
+      "tableNumber": null,
+      "tipAmount": 5.0,
+      "orderDateTime": "2025-04-30T11:45:00"
+    }
+  ],
+  "pizzas": [
+    {
+      "id": 1,
+      "orderId": 1,
+      "sizeId": 3,
+      "cheeseId": 1,
+      "sauceId": 1
+    },
+    {
+      "id": 2,
+      "orderId": 1,
+      "sizeId": 2,
+      "cheeseId": 2,
+      "sauceId": 2
+    }
+  ],
+  "pizzaSizes": [
+    { "id": 1, "name": "Kids", "diameter": 8, "baseCost": 6.0 },
+    { "id": 2, "name": "Small", "diameter": 10, "baseCost": 10.0 },
+    { "id": 3, "name": "Medium", "diameter": 14, "baseCost": 12.5 },
+    { "id": 4, "name": "Large", "diameter": 16, "baseCost": 15.0 },
+    { "id": 5, "name": "X Large", "diameter": 18, "baseCost": 18.0 }
+  ],
+  "cheeses": [
+    { "id": 1, "name": "Mozzarella" },
+    { "id": 2, "name": "Four Cheese" },
+    { "id": 3, "name": "Buffalo Mozzarella" },
+    { "id": 4, "name": "Vegan" },
+    { "id": 5, "name": "Ricotta" },
+    { "id": 6, "name": "None" }
+  ],
+  "sauces": [
+    { "id": 1, "name": "Marinara" },
+    { "id": 2, "name": "Garlic White" },
+    { "id": 3, "name": "Arrabbiata" },
+    { "id": 4, "name": "Diavolo" },
+    { "id": 5, "name": "None" }
+  ],
+  "toppings": [
+    { "id": 1, "name": "Sausage", "price": 1.0 },
+    { "id": 2, "name": "Pepperoni", "price": 1.0 },
+    { "id": 3, "name": "Mushroom", "price": 0.5 },
+    { "id": 4, "name": "Onion", "price": 0.5 },
+    { "id": 5, "name": "Green pepper", "price": 0.5 },
+    { "id": 6, "name": "Black olive", "price": 0.5 },
+    { "id": 7, "name": "Basil", "price": 0.5 },
+    { "id": 8, "name": "Extra cheese", "price": 1.0 }
+  ],
+  "pizzaToppings": [
+    { "id": 1, "pizzaId": 1, "toppingId": 1 },
+    { "id": 2, "pizzaId": 1, "toppingId": 7 },
+    { "id": 3, "pizzaId": 2, "toppingId": 3 },
+    { "id": 4, "pizzaId": 2, "toppingId": 8 }
+  ]
+}
