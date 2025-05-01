@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { getAllEmployees } from "./components/service/EmployeeService";
+import { getAllEmployees } from "../service/EmployeeService.jsx";
+getAllEmployees;
 
 export const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
