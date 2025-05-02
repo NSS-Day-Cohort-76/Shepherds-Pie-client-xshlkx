@@ -6,15 +6,17 @@ import { OrderList } from "../components/OrderList/orderList.jsx";
 import { Reports } from "../components/Reports/Reports.jsx";
 import { CreateOrder } from "../components/CreateOrder/createOrder.jsx";
 import { EmployeeList } from "../components/Employees/EmployeesList.jsx";
+import { EmployeeDetails } from "../components/Employees/EmployeeDetails.jsx";
+import { EmployeeForm } from "../components/forms/EmployeeForm.jsx";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
 
   useEffect(() => {
-    const localHoneyUser = localStorage.getItem("honey_user");
-    const honeyUserObject = JSON.parse(localHoneyUser);
+    const localPizzaUser = localStorage.getItem("pizza_user");
+    const pizzaUserObject = JSON.parse(localPizzaUser);
 
-    setCurrentUser(honeyUserObject);
+    setCurrentUser(pizzaUserObject);
   }, []);
   return (
     <Routes>
@@ -31,7 +33,13 @@ export const ApplicationViews = () => {
         <Route path="welcome" element={<Welcome />} />
         <Route path="orderlist" element={<OrderList />} />
         <Route path="reports" element={<Reports />} />
-        <Route path="employees" element={<EmployeeList />} />
+        <Route path="employees"  >
+          <Route index element={<EmployeeList />} />
+          <Route path=":employeeId" element={<EmployeeDetails />} />
+        </Route>
+        <Route path="profile" 
+        element={<EmployeeForm currentUser={currentUser}/>} />
+        
         <Route path="createorder" element={<CreateOrder />} />
       </Route>
     </Routes>
