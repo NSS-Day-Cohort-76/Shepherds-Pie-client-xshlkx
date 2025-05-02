@@ -2,6 +2,10 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { getAllEmployees } from '../service/EmployeeService.jsx';
 getAllEmployees;
+import "./Employee.css"
+import { Link } from "react-router-dom";
+import { Employee } from "./Employee.jsx";
+
 
 export const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
@@ -13,17 +17,15 @@ export const EmployeeList = () => {
   }, []);
 
   return (
-    <ul>
-      <li>
-        {employees.map((employee) => {
-          return (
-            <div key={employee.id}>
-              <div>{employee.name}</div>
-              <div>{employee.role}</div>
-            </div>
-          );
+<div className="employees">
+        {employees.map((employeeObj) => {
+        return (<Link to={`/employees/${employeeObj.id}`} key={employeeObj.id}>
+        <Employee employee={employeeObj}/>
+    </Link>
+    )
+
         })}
-      </li>
-    </ul>
-  );
-};
+    </div>
+    )
+}
+
