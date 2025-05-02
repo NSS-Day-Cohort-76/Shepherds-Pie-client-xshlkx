@@ -12,8 +12,8 @@ export const OrderList = () => {
     <article className="container">
       {orders.map((order) => {
         return (
-          <div>
-            <Order order={order} key={order.id} />;
+          <div key={order.id}>
+            <Order order={order} />
           </div>
         );
       })}

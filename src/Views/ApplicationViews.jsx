@@ -4,7 +4,7 @@ import { NavBar } from "../components/nav/NavBar.jsx";
 import { Welcome } from "../welcome/Welcome.jsx";
 import { OrderList } from "../components/OrderList/orderList.jsx";
 import { Reports } from "../components/Reports/Reports.jsx";
-import { CreateOrder } from "../components/CreateOrder/createOrder.jsx";
+import { CreateOrder } from "../components/CreateOrder/CreateOrder.jsx";
 import { EmployeeList } from "../components/Employees/EmployeesList.jsx";
 
 export const ApplicationViews = () => {
