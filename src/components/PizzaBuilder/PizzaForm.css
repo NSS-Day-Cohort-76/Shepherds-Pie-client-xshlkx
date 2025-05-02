@@ -1,0 +1,13 @@
+.pizza-preview-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.pizza-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}

@@ -1,6 +1,6 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import { getAllEmployees } from "../service/EmployeeService.jsx";
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { getAllEmployees } from '../service/EmployeeService.jsx';
 getAllEmployees;
 
 export const EmployeeList = () => {
@@ -17,10 +17,10 @@ export const EmployeeList = () => {
       <li>
         {employees.map((employee) => {
           return (
-            <>
+            <div key={employee.id}>
               <div>{employee.name}</div>
               <div>{employee.role}</div>
-            </>
+            </div>
           );
         })}
       </li>
