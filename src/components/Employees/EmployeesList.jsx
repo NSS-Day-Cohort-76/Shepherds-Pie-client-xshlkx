@@ -1,6 +1,6 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import { getAllEmployees } from "../service/EmployeeService.jsx";
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { getAllEmployees } from '../service/EmployeeService.jsx';
 getAllEmployees;
 import "./Employee.css"
 import { Link } from "react-router-dom";
