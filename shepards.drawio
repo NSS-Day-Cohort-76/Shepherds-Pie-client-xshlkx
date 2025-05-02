@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="Y7bIq_xGDVqtfg96Vpnk" name="Page-1">
-        <mxGraphModel dx="4247" dy="1977" grid="1" gridSize="1" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" background="light-dark(#FFFFFF,#000000)" math="0" shadow="0">
+        <mxGraphModel dx="2316" dy="1694" grid="1" gridSize="1" guides="1" tooltips="1" connect="0" arrows="0" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1200" background="light-dark(#FFFFFF,#000000)" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" value="EV - HOME" parent="0"/>
@@ -362,7 +362,7 @@
                     <mxGeometry x="260" y="1" width="60" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="256" value="" style="whiteSpace=wrap;html=1;strokeWidth=0.5;strokeColor=#CCCCCC;fillColor=none;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="270" vertex="1">
-                    <mxGeometry x="1" y="62" width="520" height="262" as="geometry"/>
+                    <mxGeometry x="1" y="62" width="517" height="262" as="geometry"/>
                 </mxCell>
                 <mxCell id="266" value="&lt;font face=&quot;Tahoma&quot;&gt;(Employee View)&amp;nbsp; &lt;b&gt;Employees&lt;/b&gt;&lt;/font&gt;" style="text;strokeColor=none;align=left;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="270" vertex="1">
                     <mxGeometry width="191" height="30" as="geometry"/>

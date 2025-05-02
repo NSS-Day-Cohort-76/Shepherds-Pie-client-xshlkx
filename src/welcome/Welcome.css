@@ -19,3 +19,9 @@
 .welcome-container > div {
   font-style: italic;
 }
+
+.welcome-image {
+  width: 50%;
+  height: auto;
+  margin: 2rem auto;
+}
