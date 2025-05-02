@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { getAllEmployees } from "../service/EmployeeService.jsx";
-getAllEmployees;
 
 export const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
@@ -17,10 +16,12 @@ export const EmployeeList = () => {
       <li>
         {employees.map((employee) => {
           return (
-            <>
-              <div>{employee.name}</div>
-              <div>{employee.role}</div>
-            </>
+            <article key={employee.id}>
+              <section>
+                <div>Name</div>
+                {employee.name}
+              </section>
+            </article>
           );
         })}
       </li>

@@ -11,10 +11,10 @@ export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
 
   useEffect(() => {
-    const localHoneyUser = localStorage.getItem("honey_user");
-    const honeyUserObject = JSON.parse(localHoneyUser);
+    const localPizzaUser = localStorage.getItem("pizza_user");
+    const pizzaUserObject = JSON.parse(localPizzaUser);
 
-    setCurrentUser(honeyUserObject);
+    setCurrentUser(pizzaUserObject);
   }, []);
   return (
     <Routes>
