@@ -1,29 +1,59 @@
 .navbar {
-  display: flex;
-  flex-wrap: nowrap;
-  background-color: var(--navbar);
-  margin: 0;
-  width: 100%;
-  padding: 0.5rem;
+  --bs-navbar-toggler-border-color: none !important;
+  --bs-navbar-toggler-border-radius: none !important;
+  --bs-navbar-toggler-border-width: none !important;
+  --bs-navbar-toggler-focus-border-color: none !important;
+  --bs-navbar-toggler-focus-width: none !important;
 }
 
-.navbar-item {
-  flex-basis: 20%;
-  list-style-type: none;
-  text-align: center;
-  color: var(--offWhite);
+.nav-link {
+  font-weight: bold; /* Make links bold */
+  margin-right: 15px; /* Add spacing between links */
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
 }
 
-.navbar-link {
-  text-decoration: none;
-  font-family: "Quicksand", sans-serif;
-  letter-spacing: 1px;
+.nav-link:hover {
+  color: #92ff00 !important; /* neon green */
+  font-weight: bold;
+  text-shadow: 0 0 5px #92ff00;
 }
 
-.navbar-logout {
-  margin-left: auto;
+.navbar-brand {
+  font-family: "Bangers", cursive;
+  color: #92ff00;
+}
+.navbar-brand:hover {
+  color: #92ff00 !important; /* neon green */
+  font-weight: bold;
+  text-shadow: 0 0 5px #92ff00;
 }
 
-.navbar-link:hover {
-  color: var(--primary);
+.button.navbar-toggler {
+  border: none; /* Remove any border */
+  outline: none; /* Remove the default outline */
+  box-shadow: none; /* Remove the focus box-shadow */
+}
+
+/*  */
+
+.navbar-toggler-icon {
+  background-image: url("/assets/hamburgerIcon.svg") !important; /* Correct path to the SVG */
+  background-size: contain; /* Ensure the icon fits properly */
+  background-repeat: no-repeat; /* Prevent tiling */
+  background-position: center; /* Center the icon */
+  width: 30px; /* Adjust width */
+  height: 30px; /* Adjust height */
+  border: none !important;
+}
+
+/* Adjust spacing for smaller screens */
+@media (max-width: 992px) {
+  .nav-link {
+    margin-right: 0; /* Remove right margin for stacked links */
+    margin-bottom: 10px; /* Add spacing between stacked links */
+  }
+
+  .navbar-nav {
+    text-align: center; /* Center-align links in the collapsed menu */
+  }
 }

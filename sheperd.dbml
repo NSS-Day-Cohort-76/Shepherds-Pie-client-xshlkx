@@ -1,0 +1,52 @@
+Table Employee {
+  id int [pk, increment]
+  name varchar
+  role varchar
+}
+
+Table Order {
+  id int [pk, increment]
+  employeeId int [ref: > Employee.id]         // who took the order
+  deliveryEmployeeId int [ref: > Employee.id] // optional, if delivered
+  orderType varchar                           // "dine-in" or "delivery"
+  tableNumber int                             // nullable
+  tipAmount decimal                           // nullable
+  orderDateTime datetime
+}
+
+Table Pizza {
+  id int [pk, increment]
+  orderId int [ref: > Order.id]
+  sizeId int [ref: > PizzaSize.id]
+  cheeseId int [ref: > Cheese.id]
+  sauceId int [ref: > Sauce.id]
+}
+
+Table PizzaSize {
+  id int [pk, increment]
+  name varchar       // e.g. "Kids", "X Large"
+  diameter int
+  baseCost decimal
+}
+
+Table Cheese {
+  id int [pk, increment]
+  name varchar
+}
+
+Table Sauce {
+  id int [pk, increment]
+  name varchar
+}
+
+Table Topping {
+  id int [pk, increment]
+  name varchar
+  price decimal
+}
+
+Table PizzaTopping {
+  id int [pk, increment]
+  pizzaId int [ref: > Pizza.id]
+  toppingId int [ref: > Topping.id]
+} 

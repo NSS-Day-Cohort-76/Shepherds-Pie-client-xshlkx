@@ -5,8 +5,8 @@ export const Welcome = () => {
     <article className="welcome-container">
       <h1>
         <span>Welcome to</span>
-        <span>Jakes Bakes</span>
       </h1>
+      <img className="welcome-image" src={`public/assets/jakeoff.png`} alt="Pizza" />
       <section>Buy a fuggin Pizza</section>
     </article>
   );

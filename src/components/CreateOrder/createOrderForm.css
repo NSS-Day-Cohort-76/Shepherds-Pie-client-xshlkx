@@ -1,0 +1,73 @@
+.create-order-wrapper {
+  background-color: #fff9c7;
+  min-height: 100vh;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  color: #f8f9fa;
+}
+
+.create-order-form {
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  max-width: 700px;
+  width: 100%;
+  margin: auto;
+}
+
+.form-title {
+  font-family: "Bangers", cursive;
+  color: #92ff00;
+  font-size: 2rem;
+  text-shadow: 1px 1px 5px #000;
+}
+
+.form-input {
+  background-color: #3a3a3a;
+  color: #f8f9fa;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.checkbox-label {
+  background-color: #3a3a3a;
+  border-radius: 0px;
+  padding: 15px;
+  justify-content: space-evenly;
+}
+
+.checkbox-label:hover {
+  background-color: #4a4a4a;
+  cursor: pointer;
+}
+
+.form-check-input {
+  margin-right: 10px;
+  accent-color: #92ff00; /* Default color for modern browsers */
+}
+
+.form-check-input:checked {
+  background-color: #92ff00;
+  border-color: #92ff00;
+  box-shadow: 0 0 5px #92ff00;
+}
+
+.save-order-button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #c03221;
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.save-order-button:hover {
+  background-color: #92ff00;
+  color: black;
+}
