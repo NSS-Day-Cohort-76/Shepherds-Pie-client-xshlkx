@@ -9,13 +9,16 @@ export const NavBar = () => {
         <Link to="/OrderList">Order List</Link>
       </li>
       <li className="navbar-item">
-        <Link to="/reports">Reports</Link>
+        <Link to="/createorder">Create Order</Link>
       </li>
       <li className="navbar-item">
         <Link to="/employees">Employees</Link>
       </li>
       <li className="navbar-item">
-        <Link to="/createorder">Create Order</Link>
+        <Link to="/reports">Reports</Link>
+      </li>
+      <li className="navbar-item">
+        <Link to="/profile">Profile</Link>
       </li>
 
       {localStorage.getItem("pizza_user") ? (
