@@ -1,73 +1,142 @@
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { GetAllOrders } from "../service/OrderService.jsx";
+import "./orderList.css";
+
 export const OrderList = () => {
+  const [orders, setOrders] = useState([]);
+  const [selectedDate, setSelectedDate] = useState("");
+  const [viewCount, setViewCount] = useState(5);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  useEffect(() => {
+    GetAllOrders().then(setOrders);
+  }, []);
+
+  const filteredOrders = selectedDate
+    ? orders.filter((order) => order.timestamp.startsWith(selectedDate))
+    : orders;
+
+  const totalPages = Math.ceil(filteredOrders.length / viewCount);
+  const paginatedOrders = filteredOrders.slice(
+    (currentPage - 1) * viewCount,
+    currentPage * viewCount
+  );
+
+  const handlePageChange = (newPage) => {
+    if (newPage > 0 && newPage <= totalPages) {
+      setCurrentPage(newPage);
+    }
+  };
+
   return (
     <article>
       <section>
         <label>Filter Orders by Date</label>
-        <input type="date" placeholder="Filter by date" />
+        <input
+          type="date"
+          value={selectedDate}
+          onChange={(e) => {
+            setSelectedDate(e.target.value);
+            setCurrentPage(1);
+          }}
+        />
       </section>
+      <div className="orders-container">
+        {paginatedOrders.map((order) => (
+          <Link
+            to={`/orderdetails/${order.id}`} // Redirect to the OrderDetails page
+            key={order.id}
+            className="order-link"
+          >
+            <section className="order-card">
+              <section>
+                <div>Order Id: </div>
+                {order.id}
+              </section>
+              <section>
+                <div>
+                  Customer Name: <span>{order.customerName}</span>
+                </div>
+              </section>
+              <section>
+                <div>
+                  Order Status:{" "}
+                  <span>
+                    {order.orderType ? "Being Seated" : "Out for delivery"}
+                  </span>
+                </div>
+              </section>
+            </section>
+          </Link>
+        ))}
+      </div>
       <section>
-        <div>Order Id: </div>
-      </section>
-      <section>
-        <div>Customer Name: </div>
-      </section>
-      <section>
-        <div>Order Status: </div>
+        {totalPages > 1 && (
+          <div>
+            <button
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+            >
+              Previous
+            </button>
+            <span>
+              Page {currentPage} of {totalPages}
+            </span>
+            <button
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+            >
+              Next
+            </button>
+          </div>
+        )}
       </section>
       <footer>
-        <select name="View Count" id="quantity">
+        <select
+          name="View Count"
+          id="quantity"
+          value={viewCount}
+          onChange={(e) => {
+            setViewCount(Number(e.target.value)); // Update the number of orders to display
+            setCurrentPage(1); // Reset to the first page when view count changes
+          }}
+        >
           <option value="default">View Count</option>
-          <option value="25">25</option>
-          <option value="50">50</option>
-          <option value="75">75</option>
-          <option value="100">100</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
         </select>
       </footer>
     </article>
   );
 };
 
-// import React, { useState, useEffect } from "react";
-
+// import { useEffect } from "react";
+// import { useState } from "react";
+// import { GetAllOrders } from "../service/OrderService.jsx";
+// import "./orderList.css";
 // export const OrderList = () => {
 //   const [orders, setOrders] = useState([]);
 //   const [selectedDate, setSelectedDate] = useState("");
-//   const [viewCount, setViewCount] = useState(25); // Default to showing 25 orders
+//   const [viewCount, setViewCount] = useState(5);
 //   const [currentPage, setCurrentPage] = useState(1);
 
-//   // Fetch orders from the database (mocked here)
 //   useEffect(() => {
-//     const fetchOrders = async () => {
-//       const response = await fetch("/API/database.json"); // Adjust the path if necessary
-//       const data = await response.json();
-
-//       // Enrich orders with customer names
-//       const enrichedOrders = data.orders.map((order) => {
-//         const customer =
-//           data.employees.find((emp) => emp.id === order.employeeId)?.name ||
-//           "Unknown";
-//         return { ...order, customer };
-//       });
-
-//       setOrders(enrichedOrders);
-//     };
-
-//     fetchOrders();
+//     GetAllOrders().then(setOrders);
 //   }, []);
 
-//   // Filter orders by date
 //   const filteredOrders = selectedDate
-//     ? orders.filter((order) => order.orderDateTime.startsWith(selectedDate))
+//     ? orders.filter((order) => order.timestamp.startsWith(selectedDate))
 //     : orders;
 
-//   // Paginate orders
 //   const totalPages = Math.ceil(filteredOrders.length / viewCount);
 //   const paginatedOrders = filteredOrders.slice(
 //     (currentPage - 1) * viewCount,
 //     currentPage * viewCount
 //   );
 
-//   // Handle page navigation
 //   const handlePageChange = (newPage) => {
 //     if (newPage > 0 && newPage <= totalPages) {
 //       setCurrentPage(newPage);
@@ -76,7 +145,6 @@ export const OrderList = () => {
 
 //   return (
 //     <article>
-//       {/* Filter by Date */}
 //       <section>
 //         <label>Filter Orders by Date</label>
 //         <input
@@ -84,24 +152,35 @@ export const OrderList = () => {
 //           value={selectedDate}
 //           onChange={(e) => {
 //             setSelectedDate(e.target.value);
-//             setCurrentPage(1); // Reset to the first page when date changes
+//             setCurrentPage(1);
 //           }}
 //         />
 //       </section>
-
-//       {/* Orders List */}
-//       <section>
-//         <ul>
-//           {paginatedOrders.map((order) => (
-//             <li key={order.id}>
-//               <strong>ID:</strong> {order.id}, <strong>Customer:</strong>{" "}
-//               {order.customer}, <strong>Status:</strong> {order.orderType}
-//             </li>
-//           ))}
-//         </ul>
-//       </section>
-
-//       {/* Pagination Controls */}
+//       <div className="orders-container">
+//         {paginatedOrders.map((order) => {
+//           return (
+//             <section key={order.id} className="order-card">
+//               <section>
+//                 <div>Order Id: </div>
+//                 {order.id}
+//               </section>
+//               <section>
+//                 <div>
+//                   Customer Name: <span>{order.customerName}</span>{" "}
+//                 </div>
+//               </section>
+//               <section>
+//                 <div>
+//                   Order Status:{" "}
+//                   <span>
+//                     {order.orderType ? "Being Seated" : "Out for delivery"}
+//                   </span>
+//                 </div>
+//               </section>
+//             </section>
+//           );
+//         })}
+//       </div>
 //       <section>
 //         {totalPages > 1 && (
 //           <div>
@@ -123,23 +202,21 @@ export const OrderList = () => {
 //           </div>
 //         )}
 //       </section>
-
-//       {/* Select Menu for View Count */}
 //       <footer>
-//         <label htmlFor="quantity">View Count</label>
 //         <select
 //           name="View Count"
 //           id="quantity"
 //           value={viewCount}
 //           onChange={(e) => {
-//             setViewCount(Number(e.target.value));
+//             setViewCount(Number(e.target.value)); // Update the number of orders to display
 //             setCurrentPage(1); // Reset to the first page when view count changes
 //           }}
 //         >
-//           <option value="25">25</option>
-//           <option value="50">50</option>
-//           <option value="75">75</option>
-//           <option value="100">100</option>
+//           <option value="default">View Count</option>
+//           <option value="5">5</option>
+//           <option value="10">10</option>
+//           <option value="15">15</option>
+//           <option value="20">20</option>
 //         </select>
 //       </footer>
 //     </article>

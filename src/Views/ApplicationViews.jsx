@@ -8,16 +8,19 @@ import { CreateOrder } from "../components/CreateOrder/CreateOrder.jsx";
 import { EmployeeList } from "../components/Employees/EmployeesList.jsx";
 import { EmployeeDetails } from "../components/Employees/EmployeeDetails.jsx";
 import { EmployeeForm } from "../components/forms/EmployeeForm.jsx";
-import { OrderDetails } from "../OrderDetails/OrderDetails.jsx";
+import { OrderDetails } from "../components/CreateOrder/OrderDetails.jsx";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
 
   useEffect(() => {
     const localPizzaUser = localStorage.getItem("pizza_user");
-    const pizzaUserObject = JSON.parse(localPizzaUser);
-
-    setCurrentUser(pizzaUserObject);
+    if (localPizzaUser) {
+      const pizzaUserObject = JSON.parse(localPizzaUser);
+      setCurrentUser(pizzaUserObject);
+    } else {
+      setCurrentUser(null); // Or handle it appropriately
+    }
   }, []);
   return (
     <Routes>
@@ -42,10 +45,9 @@ export const ApplicationViews = () => {
           path="profile"
           element={<EmployeeForm currentUser={currentUser} />}
         />
-        <Route path="createorder">
-          <Route index element={<CreateOrder />} />
-          <Route path=":orderdetails" element={<OrderDetails />} />
-        </Route>
+
+        <Route path="createorder" element={<CreateOrder />} />
+        <Route path="orderdetails/:id" element={<OrderDetails />} />
       </Route>
     </Routes>
   );
