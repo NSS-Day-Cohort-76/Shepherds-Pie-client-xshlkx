@@ -7,3 +7,7 @@ export const createNewOrder = (order) => {
     body: JSON.stringify(order),
   }).then((response) => response.json());
 };
+
+export const GetAllOrders = () => {
+  return fetch(`http://localhost:8088/orders`).then((res) => res.json());
+};

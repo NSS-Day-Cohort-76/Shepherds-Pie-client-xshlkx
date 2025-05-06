@@ -3,7 +3,7 @@ import "../CreateOrder/createOrderForm.css";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { createNewOrder } from "../service/OrderService.jsx";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 // import the getCreatOrder function from the OrderService
@@ -18,7 +18,7 @@ export const CreateOrder = () => {
     phone: "",
     email: "",
     isDelivery: false,
-    timestamp: "",
+    timestamp: new Date(),
     status: "",
   });
 
@@ -57,7 +57,9 @@ export const CreateOrder = () => {
   return (
     <>
       <div className="create-order-wrapper">
-        <h2 className="form-title text-center mb-4">Let’s Bake This Order 🍕</h2>
+        <h2 className="form-title text-center mb-4">
+          Let’s Bake This Order 🍕
+        </h2>
         <div className="create-order-form mx-auto">
           <Form onSubmit={handleCreateOrder}>
             <Form.Group className="form-input">
@@ -68,6 +70,7 @@ export const CreateOrder = () => {
                 name="customerName"
                 value={order.customerName}
                 onChange={updateOrder}
+                required
               />
             </Form.Group>
 
@@ -79,6 +82,7 @@ export const CreateOrder = () => {
                 name="email"
                 value={order.email}
                 onChange={updateOrder}
+                required
               />
             </Form.Group>
 
@@ -90,6 +94,7 @@ export const CreateOrder = () => {
                 name="phone"
                 value={order.phone}
                 onChange={updateOrder}
+                required
               />
             </Form.Group>
 

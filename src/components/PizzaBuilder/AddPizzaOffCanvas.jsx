@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import Offcanvas from 'react-bootstrap/Offcanvas';
-import Button from 'react-bootstrap/Button';
-import { PizzaForm } from './PizzaForm';
+import { useState } from "react";
+import Offcanvas from "react-bootstrap/Offcanvas";
+import Button from "react-bootstrap/Button";
+import { PizzaForm } from "./PizzaForm";
 
-export const AddPizzaOffCanvas = ({ orderId }) => {
+export const AddPizzaOffCanvas = ({ orderId, onPizzaAdded }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -21,7 +21,10 @@ export const AddPizzaOffCanvas = ({ orderId }) => {
           <PizzaForm
             orderId={orderId}
             onClose={handleClose}
-            onPizzaAdded={(pizza) => console.log('Pizza added:', pizza)}
+            onPizzaAdded={(newPizza) => {
+              onPizzaAdded?.(newPizza);
+              handleClose();
+            }}
           />
         </Offcanvas.Body>
       </Offcanvas>

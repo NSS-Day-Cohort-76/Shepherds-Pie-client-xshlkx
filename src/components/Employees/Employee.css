@@ -1,27 +1,59 @@
+/* Container for the employees list */
 .employees {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 3rem;
-    list-style: none;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* Responsive grid */
+  gap: 20px; /* Space between cards */
+  padding: 2rem;
+  list-style: none;
 }
 
+/* Individual employee card */
 .employee {
-    background-color: var(--white);
-    border: 1px solid var(--outline);
-    border-radius: 0.5rem;
-    padding: 1rem;
-  }
+  background-color: #ffffff; /* White background */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effect */
+  text-decoration: none; /* Remove link underline */
+  color: inherit; /* Inherit text color */
+}
 
-  .employee-header {
-    font-size: larger;
-    font-weight: 700;
-    line-height: 3rem;
-    color: var(--primary);
-  }
+/* Hover effect for employee card */
+.employee:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
 
-  .employee-info {
-    color: var(--info);
-    font-family: "Roboto", sans-serif;
+/* Header for employee details */
+.employee-header {
+  font-size: 1.25rem; /* Larger font size */
+  font-weight: bold;
+  color: #333; /* Darker text color */
+  margin-bottom: 1rem;
+}
+
+/* Styling for employee info labels */
+.employee-info {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #555; /* Medium text color */
+  margin-bottom: 0.5rem;
+}
+
+/* Styling for employee info values */
+.employee div {
+  font-size: 0.9rem;
+  color: #777; /* Lighter text color */
+  margin-bottom: 1rem;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .employees {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
   }
+}

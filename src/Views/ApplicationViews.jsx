@@ -4,7 +4,7 @@ import { NavBar } from "../components/nav/NavBar.jsx";
 import { Welcome } from "../welcome/Welcome.jsx";
 import { OrderList } from "../components/OrderList/orderList.jsx";
 import { Reports } from "../components/Reports/Reports.jsx";
-import { CreateOrder } from "../components/CreateOrder/createOrder.jsx";
+import { CreateOrder } from "../components/CreateOrder/CreateOrder.jsx";
 import { EmployeeList } from "../components/Employees/EmployeesList.jsx";
 import { EmployeeDetails } from "../components/Employees/EmployeeDetails.jsx";
 import { EmployeeForm } from "../components/forms/EmployeeForm.jsx";
@@ -31,7 +31,8 @@ export const ApplicationViews = () => {
             <NavBar />
             <Outlet />
           </>
-        }>
+        }
+      >
         <Route index element={<Welcome />} />
         <Route path="welcome" element={<Welcome />} />
         <Route path="orderlist" element={<OrderList />} />
@@ -40,7 +41,10 @@ export const ApplicationViews = () => {
           <Route index element={<EmployeeList />} />
           <Route path=":employeeId" element={<EmployeeDetails />} />
         </Route>
-        <Route path="profile" element={<EmployeeForm currentUser={currentUser} />} />
+        <Route
+          path="profile"
+          element={<EmployeeForm currentUser={currentUser} />}
+        />
 
         <Route path="createorder" element={<CreateOrder />} />
         <Route path="orderdetails/:id" element={<OrderDetails />} />

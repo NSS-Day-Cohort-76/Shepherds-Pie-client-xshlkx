@@ -6,7 +6,10 @@ export const NavBar = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="navbar navbar-expand-lg" style={{ backgroundColor: "#C03221" }}>
+    <nav
+      className="navbar navbar-expand-lg"
+      style={{ backgroundColor: "#C03221" }}
+    >
       <div className="container-fluid">
         <Link className="navbar-brand text-light" to="/">
           Jake N’ Bakes
@@ -19,7 +22,8 @@ export const NavBar = () => {
           data-bs-target="#navbarNav"
           aria-controls="navbarNav"
           aria-expanded="false"
-          aria-label="Toggle navigation">
+          aria-label="Toggle navigation"
+        >
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
@@ -57,7 +61,8 @@ export const NavBar = () => {
                   onClick={() => {
                     localStorage.removeItem("pizza_user");
                     navigate("/", { replace: true });
-                  }}>
+                  }}
+                >
                   LOGOUT
                 </Link>
               </li>
