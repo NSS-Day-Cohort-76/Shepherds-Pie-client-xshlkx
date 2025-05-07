@@ -41,204 +41,215 @@
       "address": "200 Oakwood St"
     }
   ],
-  "orders": [
+  "tables": [
     {
       "id": 1,
-      "employeeId": 3,
-      "deliveryEmployeeId": 2,
-      "isDelivery": true,
-      "tableNumber": null,
-      "tipAmount": 5,
-      "timestamp": "2025-05-05T16:04:17.910Z"
+      "number": 1
     },
     {
       "id": 2,
-      "employeeId": 2,
-      "deliveryEmployeeId": 3,
-      "isDelivery": true,
-      "tableNumber": null,
-      "tipAmount": 5,
-      "timestamp": "2025-04-04T16:04:17.910Z"
+      "number": 2
     },
     {
-      "customerName": "James Charles",
-      "phone": "yurrr190998",
-      "email": "rickbobby@gamil.com",
+      "id": 3,
+      "number": 3
+    },
+    {
+      "id": 4,
+      "number": 4
+    },
+    {
+      "id": 5,
+      "number": 5
+    },
+    {
+      "id": 6,
+      "number": 6
+    },
+    {
+      "id": 7,
+      "number": 7
+    },
+    {
+      "id": 8,
+      "number": 8
+    },
+    {
+      "id": 9,
+      "number": 9
+    }
+  ],
+  "orders": [
+    {
+      "customerName": "TESTER TESTING",
+      "phone": "9118999111",
+      "email": "test@tester.com",
       "isDelivery": true,
       "timestamp": "2025-05-05T23:14:07.818Z",
-      "status": "",
-      "id": 3
+      "status": "Out for Delivery",
+      "id": 3,
+      "deliveryEmployeeId": 2,
+      "tipAmount": 5
     },
     {
-      "customerName": "HelloTerry",
-      "phone": "18230918723",
-      "email": "ashdlkjahs@gmail.com",
+      "customerName": "Yahoo Mike",
+      "phone": "9115555555",
+      "email": "yahooer@yahoooooie.com",
       "isDelivery": true,
-      "timestamp": "2025-05-05T23:17:51.925Z",
-      "status": "",
-      "id": 4
+      "timestamp": "2025-04-05T23:17:51.925Z",
+      "status": "Out for Delivery",
+      "id": 4,
+      "deliveryEmployeeId": 4
     },
     {
-      "customerName": "Ricky Bob",
-      "phone": "12987109487",
-      "email": "bobby@gamil.com",
-      "isDelivery": true,
-      "timestamp": "2025-05-05T23:51:41.066Z",
-      "status": "",
-      "id": 5
-    },
-    {
-      "customerName": "Jim Bob",
-      "phone": "908172049",
-      "email": "JIIMMYBOB@aol.com",
-      "isDelivery": false,
-      "timestamp": "2025-05-06T00:12:00.666Z",
-      "status": "",
-      "id": 6
-    },
-    {
-      "customerName": "asdasd",
-      "phone": "asdasd",
-      "email": "asdasda@aol.com",
-      "isDelivery": true,
-      "timestamp": "2025-05-06T14:05:15.623Z",
-      "status": "",
-      "id": 7
-    },
-    {
-      "customerName": "Name",
-      "phone": "12312141",
+      "customerName": "Steve",
+      "phone": "123123",
       "email": "customer@gmail.com",
       "isDelivery": true,
-      "timestamp": "2025-05-07T15:42:55.081Z",
-      "status": "",
-      "id": 8
+      "timestamp": "2025-04-07T16:07:48.214Z",
+      "status": "Out for Delivery",
+      "id": 9,
+      "deliveryEmployeeId": 4,
+      "tipAmount": 420
+    },
+    {
+      "customerName": "DineinOrder Person",
+      "phone": "1231245",
+      "email": "customer@YAMUTHA.com",
+      "isDelivery": false,
+      "timestamp": "2025-04-07T18:15:13.539Z",
+      "status": "Being Seated",
+      "id": 11,
+      "tipAmount": 5,
+      "tableNumber": 2
+    },
+    {
+      "customerName": "Helen ",
+      "phone": "1298371092837",
+      "email": "customer42069@gmail.com",
+      "isDelivery": false,
+      "timestamp": "2025-04-07T18:44:09.546Z",
+      "status": "Being Seated",
+      "id": 12,
+      "tableNumber": 4,
+      "tipAmount": 15
+    },
+    {
+      "customerName": "asdasdasd",
+      "phone": "12981092487",
+      "email": "customer@gmail.com",
+      "isDelivery": true,
+      "timestamp": "2025-05-07T18:50:35.642Z",
+      "status": "Out for Delivery",
+      "id": 13,
+      "deliveryEmployeeId": 3,
+      "tipAmount": 5
+    },
+    {
+      "customerName": "HELLO WORLD",
+      "phone": "178230987120",
+      "email": "helloworld@gmail.com",
+      "isDelivery": true,
+      "timestamp": "2025-05-07T19:57:43.215Z",
+      "status": "Out for Delivery",
+      "id": 14,
+      "tipAmount": 5,
+      "deliveryEmployeeId": 2
     }
   ],
   "pizzas": [
     {
-      "id": 1,
-      "orderId": 1,
-      "sizeId": 3,
-      "cheeseId": 1,
-      "sauceId": 1
-    },
-    {
-      "id": 2,
-      "orderId": 1,
+      "id": 19,
+      "orderId": 9,
       "sizeId": 2,
-      "cheeseId": 2,
-      "sauceId": 2
-    },
-    {
-      "sizeId": 1,
-      "cheeseId": 1,
-      "sauceId": 1,
-      "id": 3
-    },
-    {
-      "sizeId": 5,
-      "cheeseId": 5,
-      "sauceId": 1,
-      "totalPrice": 23.5,
-      "id": 4
-    },
-    {
-      "sizeId": 2,
-      "cheeseId": 3,
-      "sauceId": 4,
-      "totalPrice": 12,
-      "id": 5
-    },
-    {
-      "sizeId": 4,
       "cheeseId": 4,
       "sauceId": 3,
-      "totalPrice": 17.5,
-      "id": 6
+      "totalPrice": 11
     },
     {
       "sizeId": 5,
-      "cheeseId": 4,
-      "sauceId": 2,
-      "totalPrice": 23.5,
-      "id": 8
-    },
-    {
-      "sizeId": 4,
-      "cheeseId": 2,
-      "sauceId": 2,
-      "totalPrice": 18,
-      "id": 9
-    },
-    {
-      "sizeId": 3,
-      "cheeseId": 2,
-      "sauceId": 2,
-      "totalPrice": 15.5,
-      "id": 12
-    },
-    {
-      "sizeId": 5,
-      "cheeseId": 4,
-      "sauceId": 3,
-      "totalPrice": 18,
-      "id": 13
-    },
-    {
-      "sizeId": 5,
-      "cheeseId": 2,
-      "sauceId": 2,
-      "totalPrice": 19.5,
-      "id": 14
-    },
-    {
-      "sizeId": 5,
-      "cheeseId": 4,
-      "sauceId": 3,
-      "orderId": "6",
-      "totalPrice": 22.5,
-      "id": 15
-    },
-    {
-      "sizeId": 5,
-      "cheeseId": 3,
-      "sauceId": 2,
-      "orderId": "7",
-      "totalPrice": 19.5,
-      "id": 16
-    },
-    {
-      "sizeId": 5,
-      "cheeseId": 5,
-      "sauceId": 1,
-      "orderId": "5",
-      "totalPrice": 21.5,
-      "id": 17
+      "cheeseId": 6,
+      "sauceId": 5,
+      "orderId": 11,
+      "totalPrice": 20.5,
+      "id": 21
     },
     {
       "sizeId": 3,
       "cheeseId": 1,
       "sauceId": 3,
-      "orderId": "4",
+      "orderId": 4,
       "totalPrice": 14.5,
       "id": 18
     },
     {
-      "sizeId": 5,
-      "cheeseId": 4,
+      "sizeId": 3,
+      "cheeseId": 3,
+      "sauceId": 2,
+      "totalPrice": 14,
+      "id": 21
+    },
+    {
+      "sizeId": 3,
+      "cheeseId": 2,
       "sauceId": 4,
-      "orderId": "8",
+      "orderId": 9,
+      "totalPrice": 18,
+      "id": 23
+    },
+    {
+      "sizeId": 5,
+      "cheeseId": 2,
+      "sauceId": 1,
+      "totalPrice": 22.5,
+      "id": 24
+    },
+    {
+      "sizeId": 2,
+      "cheeseId": 2,
+      "sauceId": 2,
+      "orderId": 11,
+      "totalPrice": 13,
+      "id": 25
+    },
+    {
+      "sizeId": 2,
+      "cheeseId": 1,
+      "sauceId": 3,
+      "orderId": 11,
+      "totalPrice": 12,
+      "id": 26
+    },
+    {
+      "sizeId": 2,
+      "cheeseId": 2,
+      "sauceId": 2,
+      "orderId": 9,
+      "totalPrice": 11.5,
+      "id": 27
+    },
+    {
+      "sizeId": 5,
+      "cheeseId": 2,
+      "sauceId": 1,
+      "orderId": 12,
       "totalPrice": 20.5,
-      "id": 19
+      "id": 28
+    },
+    {
+      "sizeId": 4,
+      "cheeseId": 3,
+      "sauceId": 2,
+      "orderId": 3,
+      "totalPrice": 16.5,
+      "id": 29
     },
     {
       "sizeId": 3,
       "cheeseId": 3,
       "sauceId": 2,
-      "orderId": "8",
-      "totalPrice": 13,
-      "id": 20
+      "totalPrice": 14,
+      "id": 30
     }
   ],
   "sizes": [
@@ -385,154 +396,439 @@
       "toppingId": 8
     },
     {
-      "pizzaId": 4,
-      "toppingId": 1,
-      "id": 5
+      "id": 5,
+      "pizzaId": 19,
+      "toppingId": 2
     },
     {
-      "pizzaId": 4,
-      "toppingId": 2,
-      "id": 6
+      "id": 6,
+      "pizzaId": 19,
+      "toppingId": 4
     },
     {
-      "pizzaId": 4,
+      "pizzaId": 20,
       "toppingId": 1,
       "id": 7
     },
     {
-      "pizzaId": 4,
-      "toppingId": 2,
+      "pizzaId": 20,
+      "toppingId": 7,
       "id": 8
     },
     {
-      "pizzaId": 4,
-      "toppingId": 3,
+      "pizzaId": 20,
+      "toppingId": 8,
       "id": 9
     },
     {
-      "pizzaId": 4,
-      "toppingId": 4,
+      "pizzaId": 20,
+      "toppingId": 2,
       "id": 10
     },
     {
-      "pizzaId": 4,
-      "toppingId": 5,
+      "pizzaId": 20,
+      "toppingId": 3,
       "id": 11
-    },
-    {
-      "pizzaId": 4,
-      "toppingId": 6,
-      "id": 12
-    },
-    {
-      "pizzaId": 4,
-      "toppingId": 7,
-      "id": 13
-    },
-    {
-      "pizzaId": 4,
-      "toppingId": 8,
-      "id": 14
-    },
-    {
-      "pizzaId": 5,
-      "toppingId": 1,
-      "id": 15
-    },
-    {
-      "pizzaId": 5,
-      "toppingId": 2,
-      "id": 16
-    },
-    {
-      "pizzaId": 6,
-      "toppingId": 6,
-      "id": 17
-    },
-    {
-      "pizzaId": 6,
-      "toppingId": 5,
-      "id": 18
-    },
-    {
-      "pizzaId": 6,
-      "toppingId": 3,
-      "id": 19
-    },
-    {
-      "pizzaId": 6,
-      "toppingId": 2,
-      "id": 20
-    },
-    {
-      "pizzaId": 8,
-      "toppingId": 3,
-      "id": 29
-    },
-    {
-      "pizzaId": 8,
-      "toppingId": 1,
-      "id": 30
-    },
-    {
-      "pizzaId": 9,
-      "toppingId": 2,
-      "id": 31
-    },
-    {
-      "pizzaId": 9,
-      "toppingId": 4,
-      "id": 32
-    },
-    {
-      "pizzaId": 9,
-      "toppingId": 5,
-      "id": 33
-    },
-    {
-      "pizzaId": 9,
-      "toppingId": 7,
-      "id": 34
-    },
-    {
-      "pizzaId": 12,
-      "toppingId": 3,
-      "id": 41
-    },
-    {
-      "pizzaId": 12,
-      "toppingId": 5,
-      "id": 42
-    },
-    {
-      "pizzaId": 12,
-      "toppingId": 7,
-      "id": 43
-    },
-    {
-      "pizzaId": 19,
-      "toppingId": 2,
-      "id": 44
-    },
-    {
-      "pizzaId": 19,
-      "toppingId": 4,
-      "id": 45
-    },
-    {
-      "pizzaId": 19,
-      "toppingId": 6,
-      "id": 46
-    },
-    {
-      "pizzaId": 19,
-      "toppingId": 7,
-      "id": 47
     },
     {
       "pizzaId": 20,
       "toppingId": 4,
-      "id": 48
+      "id": 12
+    },
+    {
+      "pizzaId": 20,
+      "toppingId": 5,
+      "id": 13
+    },
+    {
+      "pizzaId": 20,
+      "toppingId": 6,
+      "id": 14
+    },
+    {
+      "pizzaId": 20,
+      "toppingId": 8,
+      "id": 15
+    },
+    {
+      "pizzaId": 20,
+      "toppingId": 8,
+      "id": 16
+    },
+    {
+      "pizzaId": 21,
+      "toppingId": 2,
+      "id": 17
+    },
+    {
+      "pizzaId": 21,
+      "toppingId": 5,
+      "id": 18
+    },
+    {
+      "pizzaId": 21,
+      "toppingId": 6,
+      "id": 19
+    },
+    {
+      "pizzaId": 21,
+      "toppingId": 7,
+      "id": 20
+    },
+    {
+      "pizzaId": 21,
+      "toppingId": 7,
+      "id": 21
+    },
+    {
+      "pizzaId": 22,
+      "toppingId": 4,
+      "id": 22
+    },
+    {
+      "pizzaId": 22,
+      "toppingId": 5,
+      "id": 23
+    },
+    {
+      "pizzaId": 22,
+      "toppingId": 6,
+      "id": 24
+    },
+    {
+      "pizzaId": 22,
+      "toppingId": 7,
+      "id": 25
+    },
+    {
+      "pizzaId": 22,
+      "toppingId": 4,
+      "id": 26
+    },
+    {
+      "pizzaId": 22,
+      "toppingId": 5,
+      "id": 27
+    },
+    {
+      "pizzaId": 22,
+      "toppingId": 6,
+      "id": 28
+    },
+    {
+      "pizzaId": 22,
+      "toppingId": 7,
+      "id": 29
+    },
+    {
+      "pizzaId": 21,
+      "toppingId": 1,
+      "id": 49
+    },
+    {
+      "pizzaId": 21,
+      "toppingId": 3,
+      "id": 50
+    },
+    {
+      "pizzaId": 21,
+      "toppingId": 5,
+      "id": 51
+    },
+    {
+      "pizzaId": 21,
+      "toppingId": 5,
+      "id": 52
+    },
+    {
+      "pizzaId": 21,
+      "toppingId": 3,
+      "id": 53
+    },
+    {
+      "pizzaId": 21,
+      "toppingId": 5,
+      "id": 54
+    },
+    {
+      "pizzaId": 21,
+      "toppingId": 5,
+      "id": 55
+    },
+    {
+      "pizzaId": 22,
+      "toppingId": 6,
+      "id": 56
+    },
+    {
+      "pizzaId": 22,
+      "toppingId": 4,
+      "id": 57
+    },
+    {
+      "pizzaId": 22,
+      "toppingId": 2,
+      "id": 58
+    },
+    {
+      "pizzaId": 22,
+      "toppingId": 1,
+      "id": 59
+    },
+    {
+      "pizzaId": 22,
+      "toppingId": 6,
+      "id": 60
+    },
+    {
+      "pizzaId": 22,
+      "toppingId": 3,
+      "id": 61
+    },
+    {
+      "pizzaId": 22,
+      "toppingId": 2,
+      "id": 62
+    },
+    {
+      "pizzaId": 22,
+      "toppingId": 1,
+      "id": 63
+    },
+    {
+      "pizzaId": 22,
+      "toppingId": 8,
+      "id": 64
+    },
+    {
+      "pizzaId": 22,
+      "toppingId": 7,
+      "id": 65
+    },
+    {
+      "pizzaId": 23,
+      "toppingId": 1,
+      "id": 66
+    },
+    {
+      "pizzaId": 23,
+      "toppingId": 2,
+      "id": 67
+    },
+    {
+      "pizzaId": 23,
+      "toppingId": 3,
+      "id": 68
+    },
+    {
+      "pizzaId": 23,
+      "toppingId": 4,
+      "id": 69
+    },
+    {
+      "pizzaId": 23,
+      "toppingId": 5,
+      "id": 70
+    },
+    {
+      "pizzaId": 23,
+      "toppingId": 6,
+      "id": 71
+    },
+    {
+      "pizzaId": 23,
+      "toppingId": 7,
+      "id": 72
+    },
+    {
+      "pizzaId": 23,
+      "toppingId": 8,
+      "id": 73
+    },
+    {
+      "pizzaId": 24,
+      "toppingId": 1,
+      "id": 74
+    },
+    {
+      "pizzaId": 24,
+      "toppingId": 3,
+      "id": 75
+    },
+    {
+      "pizzaId": 24,
+      "toppingId": 5,
+      "id": 76
+    },
+    {
+      "pizzaId": 24,
+      "toppingId": 6,
+      "id": 77
+    },
+    {
+      "pizzaId": 25,
+      "toppingId": 5,
+      "id": 78
+    },
+    {
+      "pizzaId": 25,
+      "toppingId": 4,
+      "id": 79
+    },
+    {
+      "pizzaId": 25,
+      "toppingId": 1,
+      "id": 80
+    },
+    {
+      "pizzaId": 25,
+      "toppingId": 2,
+      "id": 81
+    },
+    {
+      "pizzaId": 26,
+      "toppingId": 1,
+      "id": 82
+    },
+    {
+      "pizzaId": 26,
+      "toppingId": 6,
+      "id": 83
+    },
+    {
+      "pizzaId": 26,
+      "toppingId": 5,
+      "id": 84
+    },
+    {
+      "pizzaId": 27,
+      "toppingId": 1,
+      "id": 85
+    },
+    {
+      "pizzaId": 27,
+      "toppingId": 3,
+      "id": 86
+    },
+    {
+      "pizzaId": 28,
+      "toppingId": 1,
+      "id": 87
+    },
+    {
+      "pizzaId": 28,
+      "toppingId": 3,
+      "id": 88
+    },
+    {
+      "pizzaId": 28,
+      "toppingId": 5,
+      "id": 89
+    },
+    {
+      "pizzaId": 28,
+      "toppingId": 7,
+      "id": 90
+    },
+    {
+      "pizzaId": 24,
+      "toppingId": 1,
+      "id": 91
+    },
+    {
+      "pizzaId": 24,
+      "toppingId": 3,
+      "id": 92
+    },
+    {
+      "pizzaId": 24,
+      "toppingId": 5,
+      "id": 93
+    },
+    {
+      "pizzaId": 24,
+      "toppingId": 1,
+      "id": 94
+    },
+    {
+      "pizzaId": 24,
+      "toppingId": 3,
+      "id": 95
+    },
+    {
+      "pizzaId": 24,
+      "toppingId": 5,
+      "id": 96
+    },
+    {
+      "pizzaId": 24,
+      "toppingId": 6,
+      "id": 97
+    },
+    {
+      "pizzaId": 24,
+      "toppingId": 1,
+      "id": 98
+    },
+    {
+      "pizzaId": 24,
+      "toppingId": 3,
+      "id": 99
+    },
+    {
+      "pizzaId": 24,
+      "toppingId": 5,
+      "id": 100
+    },
+    {
+      "pizzaId": 24,
+      "toppingId": 5,
+      "id": 101
+    },
+    {
+      "pizzaId": 29,
+      "toppingId": 1,
+      "id": 102
+    },
+    {
+      "pizzaId": 29,
+      "toppingId": 3,
+      "id": 103
+    },
+    {
+      "pizzaId": 30,
+      "toppingId": 1,
+      "id": 104
+    },
+    {
+      "pizzaId": 30,
+      "toppingId": 3,
+      "id": 105
+    },
+    {
+      "pizzaId": 30,
+      "toppingId": 5,
+      "id": 106
+    },
+    {
+      "pizzaId": 30,
+      "toppingId": 5,
+      "id": 107
+    },
+    {
+      "pizzaId": 30,
+      "toppingId": 7,
+      "id": 108
+    },
+    {
+      "pizzaId": 30,
+      "toppingId": 1,
+      "id": 109
+    },
+    {
+      "pizzaId": 30,
+      "toppingId": 3,
+      "id": 110
     }
   ]
 }
