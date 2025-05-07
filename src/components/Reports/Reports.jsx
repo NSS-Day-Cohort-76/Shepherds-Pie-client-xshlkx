@@ -1,3 +1,5 @@
+import { PopularItems } from "./PopularItems.jsx";
+
 export const Reports = () => {
   return (
     <article>
@@ -20,6 +22,10 @@ export const Reports = () => {
       <form>
         <section>Day-by-day breakdown of Sales</section>
       </form>
+      <div className="popular-items">
+        <h2 className="report-header">Popular Items</h2>
+        <PopularItems popularData={{}} />
+      </div>
     </article>
   );
 };
