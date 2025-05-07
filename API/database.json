@@ -217,14 +217,6 @@
       "id": 17
     },
     {
-      "sizeId": 3,
-      "cheeseId": 1,
-      "sauceId": 3,
-      "orderId": "4",
-      "totalPrice": 14.5,
-      "id": 18
-    },
-    {
       "sizeId": 5,
       "cheeseId": 4,
       "sauceId": 4,
@@ -239,6 +231,22 @@
       "orderId": "8",
       "totalPrice": 13,
       "id": 20
+    },
+    {
+      "sizeId": 3,
+      "cheeseId": 3,
+      "sauceId": 1,
+      "orderId": "4",
+      "totalPrice": 14,
+      "id": 21
+    },
+    {
+      "sizeId": 3,
+      "cheeseId": 2,
+      "sauceId": 2,
+      "orderId": "4",
+      "totalPrice": 14.5,
+      "id": 22
     }
   ],
   "sizes": [
@@ -533,6 +541,36 @@
       "pizzaId": 20,
       "toppingId": 4,
       "id": 48
+    },
+    {
+      "pizzaId": 21,
+      "toppingId": 5,
+      "id": 49
+    },
+    {
+      "pizzaId": 21,
+      "toppingId": 4,
+      "id": 50
+    },
+    {
+      "pizzaId": 21,
+      "toppingId": 3,
+      "id": 51
+    },
+    {
+      "pizzaId": 22,
+      "toppingId": 2,
+      "id": 52
+    },
+    {
+      "pizzaId": 22,
+      "toppingId": 3,
+      "id": 53
+    },
+    {
+      "pizzaId": 22,
+      "toppingId": 4,
+      "id": 54
     }
   ]
 }
