@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { GetAllOrders } from "../service/OrderService.jsx";
 import "./orderList.css";
@@ -8,7 +8,8 @@ export const OrderList = () => {
   const [selectedDate, setSelectedDate] = useState("");
   const [viewCount, setViewCount] = useState(5);
   const [currentPage, setCurrentPage] = useState(1);
-
+  const location = useLocation();
+  const message = location.state?.message;
   useEffect(() => {
     GetAllOrders().then(setOrders);
   }, []);
@@ -63,7 +64,7 @@ export const OrderList = () => {
                 <div>
                   Order Status:{" "}
                   <span>
-                    {order.orderType ? "Being Seated" : "Out for delivery"}
+                    {order.isDelivery ? "Out for delivery" : "Being Seated"}
                   </span>
                 </div>
               </section>
@@ -109,6 +110,10 @@ export const OrderList = () => {
           <option value="20">20</option>
         </select>
       </footer>
+      <div>
+        {message && <p className="confirmation-message">{message}</p>}
+        {/* Rest of the OrderList code */}
+      </div>
     </article>
   );
 };
