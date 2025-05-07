@@ -1,7 +1,7 @@
-import { useState } from "react";
-import Offcanvas from "react-bootstrap/Offcanvas";
-import Button from "react-bootstrap/Button";
-import { PizzaForm } from "./PizzaForm";
+import { useState } from 'react';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import Button from 'react-bootstrap/Button';
+import { PizzaForm } from './PizzaForm';
 
 export const AddPizzaOffCanvas = ({ orderId, onPizzaAdded }) => {
   const [show, setShow] = useState(false);
