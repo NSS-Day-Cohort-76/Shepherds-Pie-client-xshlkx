@@ -19,7 +19,7 @@ export const AddPizzaOffCanvas = ({ orderId, onPizzaAdded }) => {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <PizzaForm
-            orderId={orderId}
+            orderId={Number(orderId)}
             onClose={handleClose}
             onPizzaAdded={(newPizza) => {
               onPizzaAdded?.(newPizza);
