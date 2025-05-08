@@ -108,9 +108,7 @@ export const OrderDetails = () => {
         method: "DELETE",
       })
         .then(() => {
-          setPizzas((prevPizzas) =>
-            prevPizzas.filter((pizza) => pizza.id !== pizzaId)
-          );
+          setPizzas((prevPizzas) => prevPizzas.filter((pizza) => pizza.id !== pizzaId));
         })
         .catch((error) => console.error("Error removing pizza:", error));
     }
@@ -124,9 +122,7 @@ export const OrderDetails = () => {
   // Update the pizza in the state after editing
   const handlePizzaUpdated = (updatedPizza) => {
     setPizzas((prevPizzas) =>
-      prevPizzas.map((pizza) =>
-        pizza.id === updatedPizza.id ? updatedPizza : pizza
-      )
+      prevPizzas.map((pizza) => (pizza.id === updatedPizza.id ? updatedPizza : pizza))
     );
     setEditingPizza(null); // Close the edit form
   };
@@ -137,10 +133,7 @@ export const OrderDetails = () => {
 
   // Calculate the total price of the order
   const calculateTotalPrice = () => {
-    const pizzasTotal = pizzas.reduce(
-      (total, pizza) => total + pizza.totalPrice,
-      0
-    );
+    const pizzasTotal = pizzas.reduce((total, pizza) => total + pizza.totalPrice, 0);
     const deliverySurcharge = order.isDelivery ? 5 : 0;
     return pizzasTotal + deliverySurcharge + parseFloat(tipAmount || 0);
   };
@@ -190,9 +183,7 @@ export const OrderDetails = () => {
       <p className="text-black">Customer Name: {order.customerName}</p>
       <p className="text-black">Phone: {order.phone}</p>
       <p className="text-black">Email: {order.email}</p>
-      <p className="text-black">
-        Order Type: {order.isDelivery ? "Delivery" : "Dine-in"}
-      </p>
+      <p className="text-black">Order Type: {order.isDelivery ? "Delivery" : "Dine-in"}</p>
 
       <h3>Pizzas in this Order</h3>
       <div className="pizzas-list">
@@ -208,9 +199,10 @@ export const OrderDetails = () => {
         ))}
       </div>
 
-      <section>
+      <section className="order-details-bottom">
         <h3>Add Tip</h3>
         <input
+          className="tip-input"
           type="text"
           value={tipAmount}
           onChange={handleTipChange}
@@ -228,9 +220,7 @@ export const OrderDetails = () => {
 
         <AddPizzaOffCanvas
           orderId={id}
-          onPizzaAdded={(newPizza) =>
-            setPizzas((prevPizzas) => [...prevPizzas, newPizza])
-          }
+          onPizzaAdded={(newPizza) => setPizzas((prevPizzas) => [...prevPizzas, newPizza])}
         />
 
         {editingPizza && (
@@ -244,10 +234,7 @@ export const OrderDetails = () => {
         {order.isDelivery && (
           <>
             <h3>Assign Delivery</h3>
-            <select
-              value={selectedEmployee}
-              onChange={(e) => setSelectedEmployee(e.target.value)}
-            >
+            <select value={selectedEmployee} onChange={(e) => setSelectedEmployee(e.target.value)}>
               <option value="">Select an Employee</option>
               {employees.map((employee) => (
                 <option key={employee.id} value={employee.id}>
@@ -262,10 +249,7 @@ export const OrderDetails = () => {
         {!order.isDelivery && (
           <>
             <h3>Assign Table</h3>
-            <select
-              value={selectedTable}
-              onChange={(e) => setSelectedTable(e.target.value)}
-            >
+            <select value={selectedTable} onChange={(e) => setSelectedTable(e.target.value)}>
               <option value="">Select a Table</option>
               {tables.map((table) => (
                 <option key={table.id} value={table.id}>

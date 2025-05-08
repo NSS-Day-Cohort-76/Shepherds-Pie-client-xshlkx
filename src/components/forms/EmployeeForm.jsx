@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react";
-import {
-  getEmployeeByUserId,
-  updateEmployee,
-} from "../service/EmployeeService";
+import { getEmployeeByUserId, updateEmployee } from "../service/EmployeeService";
 import { useNavigate } from "react-router-dom";
 import "./Form.css";
 

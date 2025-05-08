@@ -21,7 +21,7 @@ export const Login = () => {
             name: user.name,
             address: user.address,
             email: user.email,
-            phone: user.phone
+            phone: user.phone,
           })
         );
 

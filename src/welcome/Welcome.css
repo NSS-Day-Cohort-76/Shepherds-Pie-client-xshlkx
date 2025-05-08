@@ -32,7 +32,16 @@
 }
 
 .welcome-image {
-  width: 60%;
-  height: auto;
-  margin: 2rem auto;
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+}
+.welcome-message {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #92ff00;
+  font-family: "Bangers", cursive;
+  margin-top: 10px;
 }

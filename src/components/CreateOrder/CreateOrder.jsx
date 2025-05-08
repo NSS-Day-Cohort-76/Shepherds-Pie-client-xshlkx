@@ -17,7 +17,7 @@ export const CreateOrder = () => {
     customerName: "",
     phone: "",
     email: "",
-    isDelivery: false,
+    isDelivery: null,
     timestamp: new Date(),
     status: "",
   });
@@ -57,9 +57,7 @@ export const CreateOrder = () => {
   return (
     <>
       <div className="create-order-wrapper">
-        <h2 className="form-title text-center mb-4">
-          Let’s Bake This Order 🍕
-        </h2>
+        <h2 className="form-title text-center mb-4">Let’s Bake This Order 🍕</h2>
         <div className="create-order-form mx-auto">
           <Form onSubmit={handleCreateOrder}>
             <Form.Group className="form-input">
