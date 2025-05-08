@@ -199,9 +199,10 @@ export const OrderDetails = () => {
         ))}
       </div>
 
-      <section>
+      <section className="order-details-bottom">
         <h3>Add Tip</h3>
         <input
+          className="tip-input"
           type="text"
           value={tipAmount}
           onChange={handleTipChange}

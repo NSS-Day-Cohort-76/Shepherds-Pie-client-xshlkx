@@ -28,13 +28,13 @@ Joe provided us with a draft menu to help build our data model:
 
 ### Pizzas
 
-| Name | Size _(in inches)_ | Base cost |
-|---|---|---|
-| Kids | 8 | $6.00 |
-| Small | 10 | $10.00 |
-| Medium | 14 | $12.50 | 
-| Large | 16 | $15.00 | 
-| X Large | 18 | $18.00 |
+| Name    | Size _(in inches)_ | Base cost |
+| ------- | ------------------ | --------- |
+| Kids    | 8                  | $6.00     |
+| Small   | 10                 | $10.00    |
+| Medium  | 14                 | $12.50    |
+| Large   | 16                 | $15.00    |
+| X Large | 18                 | $18.00    |
 
 ### Choose a Cheese Option
 
@@ -78,7 +78,7 @@ You will not be able to complete this project efficiently without proper plannin
 
 1. One teammate should [clone and create the **develop** branch](https://nashville-software-school.github.io/github-workflow/START_REMOTE.html)
 1. Create an ERD for the system. Read **all** of the issue tickets to ensure that the entire team has the required context for the database structure.
-2. Create wireframes of the different views that the UI will need in order to fulfill requirements. These can be very simple, but make sure you have an idea of how the user is going to access each view, and how any forms will need to look to allow the user to input data.
-3. Review the [Github Workflow Guide](https://nashville-software-school.github.io/github-workflow/PROJECTS.html) to create a project board and all of the issues in your repository to the **Backlog** column.
-4. Once you have started coding, create a new branch for each feature you work on while following industry standard [branch naming conventions](https://nashville-software-school.github.io/github-workflow/BRANCH_NAMING.html).
-5. When you feel ready, [create a pull request](https://nashville-software-school.github.io/github-workflow/PR_CREATE.html) and have two teammates review your code before merging the code into the `develop` branch.
+1. Create wireframes of the different views that the UI will need in order to fulfill requirements. These can be very simple, but make sure you have an idea of how the user is going to access each view, and how any forms will need to look to allow the user to input data.
+1. Review the [Github Workflow Guide](https://nashville-software-school.github.io/github-workflow/PROJECTS.html) to create a project board and all of the issues in your repository to the **Backlog** column.
+1. Once you have started coding, create a new branch for each feature you work on while following industry standard [branch naming conventions](https://nashville-software-school.github.io/github-workflow/BRANCH_NAMING.html).
+1. When you feel ready, [create a pull request](https://nashville-software-school.github.io/github-workflow/PR_CREATE.html) and have two teammates review your code before merging the code into the `develop` branch.

@@ -5,11 +5,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 export const NavBar = () => {
   const navigate = useNavigate();
 
+  const closeMobileMenu = () => {
+    const navbarToggler = document.querySelector(".navbar-toggler");
+    const navbarCollapse = document.querySelector(".navbar-collapse");
+    if (navbarToggler && navbarCollapse.classList.contains("show")) {
+      navbarToggler.click();
+    }
+  };
+
   return (
-    <nav
-      className="navbar navbar-expand-lg"
-      style={{ backgroundColor: "#C03221" }}
-    >
+    <nav className="navbar navbar-expand-lg" style={{ backgroundColor: "#C03221" }}>
       <div className="container-fluid">
         <Link className="navbar-brand text-light" to="/">
           Jake N’ Bakes
@@ -22,8 +27,7 @@ export const NavBar = () => {
           data-bs-target="#navbarNav"
           aria-controls="navbarNav"
           aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+          aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
@@ -61,8 +65,7 @@ export const NavBar = () => {
                   onClick={() => {
                     localStorage.removeItem("pizza_user");
                     navigate("/", { replace: true });
-                  }}
-                >
+                  }}>
                   LOGOUT
                 </Link>
               </li>

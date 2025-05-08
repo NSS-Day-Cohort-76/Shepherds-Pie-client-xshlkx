@@ -4,6 +4,7 @@ article {
   flex-direction: column;
   gap: 20px;
   padding: 20px;
+  background-color: #fff9c7;
 }
 
 /* Styling for the filter section */
@@ -13,9 +14,10 @@ section:first-of-type {
 
 /* Styling for the orders container */
 .orders-container {
-  display: grid;
+  display: gridflex;
   grid-template-columns: repeat(2, 1fr); /* Two columns */
   gap: 20px; /* Space between cards */
+  background-color: #fff9c7;
 }
 
 /* Styling for individual order cards */
@@ -45,8 +47,55 @@ section:first-of-type {
   color: #555;
 }
 
+.filter-label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #040404;
+  font-family: "tahoma", sans-serif;
+}
+
+.calendar-input {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+.pagination button {
+  background-color: #c03221;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 0 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.pagination button:hover {
+  background-color: #92ff00;
+  color: black;
+}
+
+.view-count-select {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 20px;
+  font-size: 14px;
+  color: #333;
+}
+
 /* Responsive design for smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .orders-container {
     grid-template-columns: 1fr; /* Single column for smaller screens */
   }

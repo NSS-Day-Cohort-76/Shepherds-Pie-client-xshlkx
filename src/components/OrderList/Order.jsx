@@ -1,11 +1,4 @@
-export const Order = ({
-  name,
-  phone,
-  setPhone,
-  setName,
-  orderType,
-  setOrderType,
-}) => {
+export const Order = ({ name, phone, setPhone, setName, orderType, setOrderType }) => {
   return (
     <article>
       <section>

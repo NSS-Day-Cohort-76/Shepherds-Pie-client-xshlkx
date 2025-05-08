@@ -1,13 +1,7 @@
 import { useEffect, useState } from "react";
 import "./PizzaForm.css";
 
-export const PizzaForm = ({
-  orderId,
-  pizza: pizzaProp,
-  onClose,
-  onPizzaAdded,
-  onPizzaUpdated,
-}) => {
+export const PizzaForm = ({ orderId, pizza: pizzaProp, onClose, onPizzaAdded, onPizzaUpdated }) => {
   const [sizes, setSizes] = useState([]);
   const [cheeses, setCheeses] = useState([]);
   const [sauces, setSauces] = useState([]);
@@ -46,9 +40,7 @@ export const PizzaForm = ({
 
   const toggleTopping = (id) => {
     setSelectedToppings((prev) =>
-      prev.includes(id)
-        ? prev.filter((toppingId) => toppingId !== id)
-        : [...prev, id]
+      prev.includes(id) ? prev.filter((toppingId) => toppingId !== id) : [...prev, id]
     );
   };
 
@@ -112,11 +104,8 @@ export const PizzaForm = ({
       <label>Size:</label>
       <select
         value={pizza.sizeId}
-        onChange={(event) =>
-          setPizza({ ...pizza, sizeId: parseInt(event.target.value) })
-        }
-        required
-      >
+        onChange={(event) => setPizza({ ...pizza, sizeId: parseInt(event.target.value) })}
+        required>
         <option value="">Select Size</option>
         {sizes.map((size) => (
           <option key={size.id} value={size.id}>
@@ -128,11 +117,8 @@ export const PizzaForm = ({
       <label>Select Cheese:</label>
       <select
         value={pizza.cheeseId}
-        onChange={(event) =>
-          setPizza({ ...pizza, cheeseId: parseInt(event.target.value) })
-        }
-        required
-      >
+        onChange={(event) => setPizza({ ...pizza, cheeseId: parseInt(event.target.value) })}
+        required>
         <option value="">Select Cheese</option>
         {cheeses.map((cheese) => (
           <option key={cheese.id} value={cheese.id}>
@@ -144,11 +130,8 @@ export const PizzaForm = ({
       <label>Select Sauce:</label>
       <select
         value={pizza.sauceId}
-        onChange={(event) =>
-          setPizza({ ...pizza, sauceId: parseInt(event.target.value) })
-        }
-        required
-      >
+        onChange={(event) => setPizza({ ...pizza, sauceId: parseInt(event.target.value) })}
+        required>
         <option value="">Select Sauce</option>
         {sauces.map((sauce) => (
           <option key={sauce.id} value={sauce.id}>

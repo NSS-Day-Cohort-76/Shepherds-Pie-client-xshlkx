@@ -130,175 +130,125 @@ export const Reports = () => {
   };
 
   return (
-    <div className="create-order-wrapper">
-      <h2>Sales Report</h2>
+    <div className="sales-reports-wrapper">
+      <div className="sales-reports-header">
+        <h2 className="form-reports-title text-center mb-4">SALES REPORTS 💰</h2>
 
-      {/* Month Selector */}
-      <select value={selectedMonth} onChange={(e) => setSelectedMonth(e.target.value)}>
-        {availableMonths.map((month) => (
-          <option key={month} value={month}>
-            {month}
-          </option>
-        ))}
-      </select>
-
-      {/* Summary Info */}
-      <h3>Summary</h3>
-      <ul className="create-order-form">
-        <li>Total Orders: {summary.totalOrders}</li>
-        <li>Total Sales: ${summary.totalSales.toFixed(2)}</li>
-        <li>Average Order Value: ${summary.averageOrderValue.toFixed(2)}</li>
-      </ul>
-
-      {/* Daily Breakdown */}
-      <h3>Day-by-Day Breakdown</h3>
-      <ul className="create-order-form">
-        {dailyBreakdown.map(([date, total]) => (
-          <li key={date}>
-            {date}: ${total.toFixed(2)}
-          </li>
-        ))}
-      </ul>
-
-      {/* Popular Items */}
-      <h3>Popular Items</h3>
-      <ul className="create-order-form">
-        <li onClick={() => handleItemClick(popularItems.size, "Size")}>
-          Most Popular Size: {popularItems.size?.[0]} ({popularItems.size?.[1]} orders)
-        </li>
-        <li onClick={() => handleItemClick(popularItems.cheese, "Cheese")}>
-          Most Popular Cheese: {popularItems.cheese?.[0]} ({popularItems.cheese?.[1]} orders)
-        </li>
-        <li onClick={() => handleItemClick(popularItems.sauce, "Sauce")}>
-          Most Popular Sauce: {popularItems.sauce?.[0]} ({popularItems.sauce?.[1]} orders)
-        </li>
-        <li>Top 3 Toppings:</li>
-        <ul>
-          {popularItems.toppings.map(([toppingId, count]) => (
-            <li key={toppingId} onClick={() => handleItemClick([toppingId, count], "Topping")}>
-              Topping {toppingId}: {count} orders
-            </li>
+        {/* Month Selector */}
+        <select
+          className="calendar"
+          value={selectedMonth}
+          onChange={(e) => setSelectedMonth(e.target.value)}>
+          {availableMonths.map((month) => (
+            <option key={month} value={month}>
+              {month}
+            </option>
           ))}
-        </ul>
-      </ul>
+        </select>
+      </div>
+      {/* Summary Info */}
+      {/* <div className="sales-reports-summary"> */}
+      <div className="sales-reports-breakdown">
+        <h3>Summary</h3>
+        <table className="table table-sm table-striped">
+          <tbody>
+            <tr>
+              <td>Total Orders</td>
+              <td>{summary.totalOrders}</td>
+            </tr>
+            <tr>
+              <td>Total Sales</td>
+              <td>${summary.totalSales.toFixed(2)}</td>
+            </tr>
+            <tr>
+              <td>Average Order Value</td>
+              <td>${summary.averageOrderValue.toFixed(2)}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div className="sales-reports-breakdown">
+        <h3>Day-by-Day Breakdown</h3>
+        <table className="table table-sm table-striped">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Total Sales</th>
+            </tr>
+          </thead>
+          <tbody>
+            {dailyBreakdown.map(([date, total]) => (
+              <tr key={date}>
+                <td>{date}</td>
+                <td>${total.toFixed(2)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="sales-reports-breakdown">
+        <h3>Popular Items</h3>
+        <table className="table table-sm table-striped">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Most Popular</th>
+              <th># of Orders</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr onClick={() => handleItemClick(popularItems.size, "Size")}>
+              <td>Size</td>
+              <td>{popularItems.size?.[0]}</td>
+              <td>{popularItems.size?.[1]}</td>
+            </tr>
+            <tr onClick={() => handleItemClick(popularItems.cheese, "Cheese")}>
+              <td>Cheese</td>
+              <td>{popularItems.cheese?.[0]}</td>
+              <td>{popularItems.cheese?.[1]}</td>
+            </tr>
+            <tr onClick={() => handleItemClick(popularItems.sauce, "Sauce")}>
+              <td>Sauce</td>
+              <td>{popularItems.sauce?.[0]}</td>
+              <td>{popularItems.sauce?.[1]}</td>
+            </tr>
+            {popularItems.toppings.map(([toppingId, count]) => (
+              <tr key={toppingId} onClick={() => handleItemClick([toppingId, count], "Topping")}>
+                <td>Topping</td>
+                <td>{toppingId}</td>
+                <td>{count}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
 
-      {/* Detailed Breakdown */}
-      {detailedBreakdown && (
-        <div className="create-order-form">
-          <h3>Detailed Breakdown</h3>
-          <p>
-            {detailedBreakdown.type}: {detailedBreakdown.name}
-          </p>
-          <p>Orders: {detailedBreakdown.count}</p>
-          <p>Percentage of Total Orders: {detailedBreakdown.percentage}%</p>
-        </div>
-      )}
+        {detailedBreakdown && (
+          <div className="sales-reports-breakdown">
+            <h3>Detailed Breakdown</h3>
+            <table className="table table-bordered table-light">
+              <tbody>
+                <tr>
+                  <td>Type</td>
+                  <td>{detailedBreakdown.type}</td>
+                </tr>
+                <tr>
+                  <td>Name</td>
+                  <td>{detailedBreakdown.name}</td>
+                </tr>
+                <tr>
+                  <td>Orders</td>
+                  <td>{detailedBreakdown.count}</td>
+                </tr>
+                <tr>
+                  <td>Percentage of Total Orders</td>
+                  <td>{detailedBreakdown.percentage}%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
-
-// import { useEffect, useState } from 'react';
-
-// export const Reports = () => {
-//   const [selectedMonth, setSelectedMonth] = useState('');
-//   const [availableMonths, setAvailableMonths] = useState([]);
-//   const [summary, setSummary] = useState({
-//     totalOrders: 0,
-//     totalSales: 0,
-//     averageOrderValue: 0,
-//   });
-//   const [dailyBreakdown, setDailyBreakdown] = useState([]);
-
-//   // Fetch available months
-//   useEffect(() => {
-//     fetch('http://localhost:8088/orders')
-//       .then((res) => res.json())
-//       .then((orders) => {
-//         const uniqueMonths = Array.from(
-//           new Set(orders.map((order) => order.timestamp.slice(0, 7)))
-//         );
-//         setAvailableMonths(uniqueMonths);
-//         setSelectedMonth(uniqueMonths[0] || '');
-//       });
-//   }, []);
-
-//   // Fetch orders for the selected month
-//   useEffect(() => {
-//     if (!selectedMonth) return;
-
-//     fetch(
-//       `http://localhost:8088/orders?timestamp_like=${selectedMonth}&_embed=pizzas`
-//     )
-//       .then((res) => res.json())
-//       .then((orders) => {
-//         // Calculate totals
-//         const totalOrders = orders.length;
-//         const totalSales = orders.reduce((sum, order) => {
-//           return (
-//             sum +
-//             order.pizzas.reduce(
-//               (pizzaSum, pizza) => pizzaSum + (pizza.totalPrice || 0),
-//               0
-//             )
-//           );
-//         }, 0);
-//         const averageOrderValue =
-//           totalOrders > 0 ? totalSales / totalOrders : 0;
-
-//         setSummary({
-//           totalOrders,
-//           totalSales,
-//           averageOrderValue,
-//         });
-
-//         // Daily breakdown
-//         const dailySales = {};
-//         orders.forEach((order) => {
-//           const date = new Date(order.timestamp).toDateString();
-//           const orderTotal = order.pizzas.reduce(
-//             (pizzaSum, pizza) => pizzaSum + (pizza.totalPrice || 0),
-//             0
-//           );
-//           dailySales[date] = (dailySales[date] || 0) + orderTotal;
-//         });
-
-//         setDailyBreakdown(Object.entries(dailySales));
-//       });
-//   }, [selectedMonth]);
-
-//   return (
-//     <div>
-//       <h2>Sales Report</h2>
-
-//       {/* Month Selector */}
-//       <select
-//         value={selectedMonth}
-//         onChange={(e) => setSelectedMonth(e.target.value)}
-//       >
-//         {availableMonths.map((month) => (
-//           <option key={month} value={month}>
-//             {month}
-//           </option>
-//         ))}
-//       </select>
-
-//       {/* Summary Info */}
-//       <h3>Summary</h3>
-//       <ul>
-//         <li>Total Orders: {summary.totalOrders}</li>
-//         <li>Total Sales: ${summary.totalSales.toFixed(2)}</li>
-//         <li>Average Order Value: ${summary.averageOrderValue.toFixed(2)}</li>
-//       </ul>
-
-//       {/* Daily Breakdown */}
-//       <h3>Day-by-Day Breakdown</h3>
-//       <ul>
-//         {dailyBreakdown.map(([date, total]) => (
-//           <li key={date}>
-//             {date}: ${total.toFixed(2)}
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// };
+// export default Reports;

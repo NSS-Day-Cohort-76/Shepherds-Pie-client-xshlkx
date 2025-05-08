@@ -33,8 +33,9 @@ export const OrderList = () => {
   return (
     <article>
       <section>
-        <label>Filter Orders by Date</label>
+        <label className="filter-label">Filter Orders by Date</label>
         <input
+          className="calendar-input"
           type="date"
           value={selectedDate}
           onChange={(e) => {
@@ -48,8 +49,7 @@ export const OrderList = () => {
           <Link
             to={`/orderdetails/${order.id}`} // Redirect to the OrderDetails page
             key={order.id}
-            className="order-link"
-          >
+            className="order-link">
             <section className="order-card">
               <section>
                 <div>Order Id: </div>
@@ -63,22 +63,17 @@ export const OrderList = () => {
               <section>
                 <div>
                   Order Status:{" "}
-                  <span>
-                    {order.isDelivery ? "Out for delivery" : "Being Seated"}
-                  </span>
+                  <span>{order.isDelivery ? "Out for delivery" : "Being Seated"}</span>
                 </div>
               </section>
             </section>
           </Link>
         ))}
       </div>
-      <section>
+      <section className="pagination">
         {totalPages > 1 && (
           <div>
-            <button
-              onClick={() => handlePageChange(currentPage - 1)}
-              disabled={currentPage === 1}
-            >
+            <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
               Previous
             </button>
             <span>
@@ -86,8 +81,7 @@ export const OrderList = () => {
             </span>
             <button
               onClick={() => handlePageChange(currentPage + 1)}
-              disabled={currentPage === totalPages}
-            >
+              disabled={currentPage === totalPages}>
               Next
             </button>
           </div>
@@ -95,14 +89,15 @@ export const OrderList = () => {
       </section>
       <footer>
         <select
+          className="view-count-select"
+          aria-label="View Count"
           name="View Count"
           id="quantity"
           value={viewCount}
           onChange={(e) => {
             setViewCount(Number(e.target.value)); // Update the number of orders to display
             setCurrentPage(1); // Reset to the first page when view count changes
-          }}
-        >
+          }}>
           <option value="default">View Count</option>
           <option value="5">5</option>
           <option value="10">10</option>
